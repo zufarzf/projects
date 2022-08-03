@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/style.css') }}">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="body__wrapper">
+        <header>
+            <div class="header__wrapper limitations">
+                <a href="" class="login__btn">Войти</a>
+                <div class="logotype">
+                    <img src="{{ url_for('main.static', filename='images/header/Logotype.svg') }}" alt="Logotype"
+                        class="logotype__img">
+                </div>
+                <form action="" class="header__search_form">
+                    <input class="header__search_input" type="text" placeholder="Что хотите поесть? ( •̀ ω •́ )y">
+                    <button class="header__search_btn" type="submit">
+                        <img class="header__search_btn__img"
+                            src="{{ url_for('main.static', filename='images/header/search.png') }}" alt="Поиск">
+                    </button>
+                    <img src="{{ url_for('main.static', filename='images/header/cloude.svg') }}" alt=""
+                        class="header__search_img_cloude">
+                    <img src="{{ url_for('main.static', filename='images/header/chef.png') }}" alt=""
+                        class="header__search_img_chef">
+                </form>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="kitchens__slider limitations">
+                <!-- ----------------------------------------- -->
+                <a href="{{ url_for('main.eat_list', catalog_name='Fast Food') }}" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/fast_food.png') }}"
+                        alt="fast food" class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Fast Food</span>
+                </a>
+                <!-- ----------------------------------------- -->
+                <a href="" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/different.png') }}"
+                        alt="different" class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Разные</span>
+                </a>
+                <!-- ----------------------------------------- -->
+                <a href="" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/pilau.png') }}" alt="national"
+                        class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Национальная</span>
+                </a>
+                <!-- ----------------------------------------- -->
+                <a href="" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/cake.png') }}" alt="desserts"
+                        class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Десерты</span>
+                </a>
+                <!-- ----------------------------------------- -->
+                <a href="" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/icecream.png') }}"
+                        alt="ice-cream" class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Мороженое</span>
+                </a>
+                <!-- ----------------------------------------- -->
+                <a href="" class="kitchen__slider__item">
+                    <img src="{{ url_for('main.static', filename='images/kitchens_slider/pizza.png') }}" alt="pizza"
+                        class="kitchen__slider__img">
+                    <span class="kitchen__slider__title">Пицца</span>
+                </a>
+                <!-- ----------------------------------------- -->
+            </div>
+            <div class="items limitations">
+                <a href="" class="item">Популярные<br>Заведения</a>
+                <a href="" class="item">Рекомендуем<br>эти заведения</a>
+                <a href="" class="item">Акции от<br>заведений</a>
+            </div>
+        </main>
+        <footer>
+            <div class="footer__wrapper"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

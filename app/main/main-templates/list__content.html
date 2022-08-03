@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/style.css') }}">
+    <title>list</title>
+</head>
+
+<body>
+    <div class="body__wrapper">
+        <header>
+            <div class="header__wrapper__2 limitations">
+                <div class="logotype__2">
+                    <a href="{{ url_for('main.main_page') }}" class="logotype__2__home_link">
+                        <img src="{{ url_for('main.static', filename='images/header/Logotype.svg') }}" alt="Logotype"
+                            class="logotype__img__2">
+                    </a>
+                </div>
+
+                <div class="header__search___login__btn__wrapper">
+                    <form action="" class="header__search_form__2">
+                        <input class="header__search_input__2" type="text"
+                            placeholder="Что хотите поесть? ( •̀ ω •́ )y">
+                        <button class="header__search_btn__2" type="submit">
+                            <img class="header__search_btn__img__2"
+                                src="{{ url_for('main.static', filename='images/header/search.png') }}" alt="Поиск">
+                        </button>
+                    </form>
+                    <a href="" class="login__btn__2">Войти</a>
+                </div>
+
+            </div>
+        </header>
+        <main>
+            <div class="kitchens__slider limitations">
+                <!-- ----------------------------------------- -->
+                <div class="content_list">
+                    <!-- --------------------------------- -->
+                    <a href="eat.html" class="content_list_item">
+                        <img src="{{ url_for('main.static', filename='images/1.jpg') }}" alt="" class="list_item_img">
+                        <p class="list_item_title_cafe">Кафе 1</p>
+                        <p class="list_item_title__price">Тако 14 000 сум</p>
+                    </a>
+                    <!-- --------------------------------- -->
+                    <a href="" class="content_list_item">
+                        <img src="{{ url_for('main.static', filename='images/2.jpg') }}" alt="" class="list_item_img">
+                        <p class="list_item_title_cafe">Кафе 2</p>
+                        <p class="list_item_title__price">Бургер 14 000 сум</p>
+                    </a>
+                    <!-- --------------------------------- -->
+                    <a href="" class="content_list_item">
+                        <img src="{{ url_for('main.static', filename='images/3.jpg') }}" alt="" class="list_item_img">
+                        <p class="list_item_title_cafe">Кафе 3</p>
+                        <p class="list_item_title__price">Сендвич 14 000 сум</p>
+                    </a>
+                    <!-- --------------------------------- -->
+                </div>
+                <!-- ----------------------------------------- -->
+            </div>
+        </main>
+        <footer>
+            <div class="footer__wrapper"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

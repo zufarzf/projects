@@ -1,0 +1,6 @@
+/__pycache__
+/app/__pycache__
+/admin/app/__pycache__
+/main/app/__pycache__
+/errors/app/__pycache__
+/env
