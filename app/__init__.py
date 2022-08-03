@@ -1,6 +1,6 @@
 # Ипортирование Flask
 from flask import Flask
-from config import config
+from config import config_type
 
 # Ипортирование дополнения Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -14,12 +14,12 @@ migrate = Migrate()
 from . import dbModels
 
 # Фабричная функция
-def create_app(config_name):
+def create_app(config_name:str):
     
     # Иницилизация Flask
     app = Flask(__name__)
     # Указываем конфигурационный файл
-    app.config.from_object(config[config_name])
+    app.config.from_object(config_type[config_name])
 
     # Указываю на app для дополнений
     db.init_app(app)
@@ -32,9 +32,9 @@ def create_app(config_name):
     from .errors import errors
 
     # Импортирую пакеты вложенных приложений
-    app.register_blueprint(admin)
+    app.register_blueprint(admin, url_prefix="/Admin")
     app.register_blueprint(main)
-    app.register_blueprint(errors)
+    app.register_blueprint(errors, url_prefix="/Errors")
 
     # Возвращаю приложение
     return app
