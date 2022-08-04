@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='css/content__list__style.css') }}">
+{% endblock head %}
+
+
 {% block main %}
 <div class="kitchens__slider limitations">
     <!-- ----------------------------------------- -->

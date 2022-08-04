@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/default_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/base_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/main_page_style.css') }}">
     <title>{{ title }}</title>
 </head>
 
@@ -13,7 +15,7 @@
     <div class="body__wrapper">
         <header>
             <div class="header__wrapper limitations">
-                <a href="" class="login__btn">Войти</a>
+                <a href="{{ url_for('main.login_user') }}" class="login__btn">Войти</a>
                 <div class="logotype">
                     <img src="{{ url_for('main.static', filename='images/header/Logotype.svg') }}" alt="Logotype"
                         class="logotype__img">

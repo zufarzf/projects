@@ -1,0 +1,50 @@
+.content_list {
+    margin: -10px;
+    display: flex;
+}
+
+a.content_list_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: #555555;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+a.content_list_item:hover {
+    box-shadow: 2px 4px 10px #444;
+}
+
+.list_item_img {
+    position: absolute;
+    height: 100%;
+    transition: 0.3s;
+}
+
+a.content_list_item:hover .list_item_img {
+    transform: scale(1.05);
+}
+
+.list_item_title_cafe,
+.list_item_title__price {
+    position: absolute;
+    background-color: #ffffffb9;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #555555;
+}
+
+.list_item_title_cafe {
+    top: 10px;
+}
+
+.list_item_title__price {
+    bottom: 10px;
+}

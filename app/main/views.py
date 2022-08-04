@@ -1,7 +1,8 @@
-from flask import render_template, url_for, request, flash, session
+from flask import render_template, url_for, request, flash, session, redirect
 from . import main
 from .forms import LoginUser
-from ..dbModels import Institution
+from ..dbModels import StaffInstitution
+from werkzeug.security import generate_password_hash, check_password_hash
 
 methods=["GET", "POST"]
 
@@ -11,10 +12,22 @@ def login_user():
     form = LoginUser()
 
     if form.validate_on_submit():
-        pass
+        staff = StaffInstitution().query.filter_by(name=form.name.data).first()
+        
+        if staff != None:
+            if check_password_hash(staff.password, form.password.data):
+                return redirect(url_for('admin.admin_panel'))
+            else:
+                flash("Не правильный пароль!", category='invalide_message')
+                return redirect(url_for('main.login_user'))
+
+        else:
+            flash("Не правильное имя пользователя!", category='invalide_message')
+            return redirect(url_for('main.login_user'))
 
     return render_template(
-        'login_user.html'
+        'login_user.html', title='Авторизация',
+        form=form
     )
 
 @main.route('/')
